@@ -1,0 +1,19 @@
+name: Guna Job AI Monitor
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+jobs:
+  job-monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+
+      - name: Run Job Monitor
+        run: |
+          echo "Guna Job AI started"
+          echo "Searching global chef jobs..."
